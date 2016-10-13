@@ -52,7 +52,7 @@
 		foreach ($cipherArr as $cipherChar)
 		{
 			$cipherNum = charToNum($alphabet, $cipherChar);
-			if (!$cipherNum == false)
+			if ($cipherNum !== false)
 			{
 				$plainNum = decryptChar($a, $b, $m, $inverse, $cipherNum);
 				$plainChar = numToChar($alphabet, $plainNum);
@@ -190,6 +190,7 @@
 					}
 				}
 			}
+			echo "##############################################################<br>\n";
 		}
 	}
 ?>
