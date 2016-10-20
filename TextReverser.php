@@ -5,6 +5,11 @@
 </head>
 <body>
 <?php
+	function utf8_strrev($str){
+    preg_match_all('/./us', $str, $ar);
+    return join('', array_reverse($ar[0]));
+}
+
 	echo "<a href='../'>HOME</a><br /><br />";
 	echo "<title>Text Reverser</title>";
 	echo "Text Reverser<br /><br />\n";
@@ -20,7 +25,7 @@
 	echo "</form><br />\n";
 	
 	$text = strtoupper($_POST['text']);
-	$reversedText = strrev($text);
+	$reversedText = utf8_strrev($text);
 	
 	echo "##############################################################<br />\n";
 	echo nl2br($text)."<br />\n";
@@ -30,3 +35,4 @@
 ?>
 </body>
 </html>
+
