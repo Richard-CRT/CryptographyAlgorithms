@@ -20,6 +20,16 @@
 	echo "	<input type='submit' value='Submit'>\n";
 	echo "</form><br />\n";
 	
+	if (strlen($_POST['possibleCharacters']) > 50)
+	{
+		$_POST['possibleCharacters'] = substr($_POST['possibleCharacters'],0,50);
+	}
+	
+	if (strlen($_POST['data']) > 3000)
+	{
+		$_POST['data'] = substr($_POST['data'],0,3000);
+	}
+	
 	$characters = array();
 	$stringArr = str_split(strtolower($_POST['data']));
 	$possibleCharacters = str_split(strtolower($_POST['possibleCharacters']));
