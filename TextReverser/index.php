@@ -9,7 +9,6 @@
     preg_match_all('/./us', $str, $ar);
     return join('', array_reverse($ar[0]));
 }
-
 	echo "<a href='../'>HOME</a><br /><br />";
 	echo "<title>Text Reverser</title>";
 	echo "Text Reverser<br /><br />\n";
@@ -17,6 +16,11 @@
 	if (!isset($_POST['text']))
 	{
 		$_POST['text'] = "";
+	}
+	
+	if (strlen($_POST['text']) > 3000)
+	{
+		$_POST['text'] = substr($_POST['data'],0,3000);
 	}
 	
 	echo "<form action='#' method='post'>\n";
@@ -35,4 +39,3 @@
 ?>
 </body>
 </html>
-
