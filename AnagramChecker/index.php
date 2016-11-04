@@ -15,6 +15,16 @@
 	echo "	<input type='submit' value='Submit'>\n";
 	echo "</form><br />\n";
 	
+	if (strlen($_POST['word1']) > 40)
+	{
+		$_POST['word1'] = substr($_POST['word1'],0,40);
+	}
+	
+	if (strlen($_POST['word2']) > 40)
+	{
+		$_POST['word2'] = substr($_POST['word2'],0,40);
+	}
+	
 	$word1Arr = str_split(strtolower($_POST['word1']));
 	$word2Arr = str_split(strtolower($_POST['word2']));
 	sort($word1Arr);
