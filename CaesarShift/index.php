@@ -14,6 +14,16 @@
 		$_POST['alphabet'] = "abcdefghijklmnopqrstuvwxyz";
 	}
 	
+	if (strlen($_POST['alphabet']) > 50)
+	{
+		$_POST['alphabet'] = substr($_POST['alphabet'],0,50);
+	}
+	
+	if (strlen($_POST['data']) > 3000)
+	{
+		$_POST['data'] = substr($_POST['data'],0,3000);
+	}
+	
 	echo "<form action='#' method='post'>\n";
 		echo "	Data:<br /><textarea name='data' rows='4' cols='50' style='font-family:serif'>".$_POST['data']."</textarea><br /><br />\n";
 		echo "	Alphabet - <input type='input' name='alphabet' size='40' value='".$_POST['alphabet']."'><br />\n";
